@@ -16,8 +16,9 @@ class _GiftPageState extends State<GiftPage> {
     var cart = gift.cart;
     return Scaffold(
      appBar: AppBar(
+       backgroundColor: Colors.purple,
        elevation: 0,
-       title:  Text('Gift Shopping', style: TextStyle(color:Colors.black),),
+       title:  Text('Gift Shopping', style: TextStyle(color:Colors.white),),
      ),
      body: ListView.builder(
        itemCount: cart.length,

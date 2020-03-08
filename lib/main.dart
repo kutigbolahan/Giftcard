@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var gift = Provider.of<GiftCard>(context);
     int totalCount = 0;
     if(gift.cart.length > 0){
-      totalCount =gift.cart.values.reduce((a, b) => a+b);
+      totalCount = gift.cart.values.reduce((a, b) => a+b);
     }
     return Scaffold(
       appBar: AppBar(
