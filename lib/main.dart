@@ -47,8 +47,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.white,
-        title: Text('Gift Cards', style: TextStyle(color:Colors.black),),
+        backgroundColor: Colors.purple,
+        title: Text('Gift Cards', style: TextStyle(color:Colors.white),),
         actions: <Widget>[
           Padding(
             padding:
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Stack(
                   children: <Widget>[
-                    IconButton(icon: Icon(Icons.shopping_cart), 
+                    IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), 
                     onPressed: null),
                     Positioned(
                       child: Stack(
@@ -95,26 +95,30 @@ class _MyHomePageState extends State<MyHomePage> {
             )
         ],
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        children: List.generate(6, (index) {
-          return GestureDetector(
-            onTap: (){
-              gift.addToCart(index);
-            },
-            child: Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/${index +1}.jpg'),
-                  fit: BoxFit.contain
-                  ),
-                  borderRadius: BorderRadius.circular(12)
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.count(
+          crossAxisCount: 2,
+          children: List.generate(6, (index) {
+            return GestureDetector(
+              onTap: (){
+                gift.addToCart(index);
+              },
+              child: Container(
+                padding: EdgeInsets.all(16),
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/${index +1}.jpg'),
+                    fit: BoxFit.cover
+                    ),
+                    borderRadius: BorderRadius.circular(20)
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }
